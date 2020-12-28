@@ -14,9 +14,10 @@ menu = input("""\nEscolha o tipo de varredura:
                 1-> Varredura SYN
                 2_> Varredura UDP
                 3-> Varredura Intensa~
-                Digite a opção requisitada: """)
+                Digite a opção requisitada: """).strip()
 
-
+while menu not in '123':
+  menu = input('Digite uma opção válida!').strip()
 
 if menu == "1":
     print("Versão Nmap: ", scanner.nmap_version())
@@ -44,8 +45,6 @@ elif menu == "3":
     print("")
     print("Portas Abertas ", scanner[ip]['tcp'].keys())
 
-else:
-    print("Selecione uma opção válida!")
     
     
 
